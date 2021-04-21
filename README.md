@@ -31,7 +31,7 @@ State your problem. In this case we'll solve the one max problem (the hello
 world of genetic algoritms). Our goal is to maximize the number of ones on a
 bitstring.
 
-```
+```typescript
 const oneMaxProblem: Genetic.Problem<number> = {
   getGenotype() {
     return new Promise((resolve) =>
@@ -52,7 +52,7 @@ const oneMaxProblem: Genetic.Problem<number> = {
 
 Specify the options for our genetic algorithm run
 
-```
+```typescript
 const options: Genetic.RunOptions<number> = {
   populationSize: 100,
   mutationRate: 0.5,
@@ -64,7 +64,7 @@ const options: Genetic.RunOptions<number> = {
 
 And finally find the best population
 
-```
+```typescript
 const bestPopulation = await genetic(
   oneMaxProblem,
   options,
