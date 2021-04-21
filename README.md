@@ -29,7 +29,7 @@ and run the examples.
 Import the main `genetic` async function and type definitions under `Genetic` .
 
 ```typescript
-import genetic, { Genetic } from "https://deno.land/x/genetic@v1.0.3/mod.ts";
+import genetic, { Genetic } from "https://deno.land/x/genetic@v1.0.4/mod.ts";
 ```
 
 State your problem. In this case we'll solve the one max problem (the hello
