@@ -12,6 +12,6 @@ export async function prepublish(version: string) {
 }
 
 /** `postpublish` will be invoked after published. */
-export async function postpublish(version: string) {
+export function postpublish(version: string) {
   console.log("Upgraded to", version);
 }

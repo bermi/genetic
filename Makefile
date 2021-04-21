@@ -38,7 +38,7 @@ repl:
 	deno repl
 
 clean:
-	rm -rf deno_dir/gen deno_dir/dl deno_dir/dist
+	rm -rf deno_dir/gen deno_dir/dl deno_dir/dist coverage
 
 test: format lint
 	deno test --lock=lock.json --cached-only --allow-none --unstable
@@ -52,3 +52,9 @@ run-examples: $(EXAMPLES)
 
 publish:
 	land publish
+
+coverage: clean test
+	deno test --coverage=coverage --unstable
+	deno coverage --lcov --unstable coverage/ > coverage/coverage.lcov
+	genhtml -o coverage/html coverage/coverage.lcov
+	open coverage/html/index.html
