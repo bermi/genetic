@@ -49,3 +49,6 @@ run-examples: $(EXAMPLES)
 		echo "Running $${example}"; \
 		deno run --unstable $${example} ; \
 	done
+
+publish:
+	land publish
