@@ -1,0 +1,9 @@
+{
+  "https://deno.land/std@0.92.0/fmt/colors.ts": "db22b314a2ae9430ae7460ce005e0a7130e23ae1c999157e3bb77cf55800f7e4",
+  "https://deno.land/std@0.92.0/testing/_diff.ts": "961eaf6d9f5b0a8556c9d835bbc6fa74f5addd7d3b02728ba7936ff93364f7a3",
+  "https://deno.land/std@0.92.0/testing/asserts.ts": "83889f9a37bdab16cb68b023a15f9172ceb644f62c0e727c72d4870a666e53d6",
+  "https://deno.land/x/mixins@v0.7.1/apply.ts": "dad7095324f5ce23693a0bc0eb3238f230c0ed2160ea8c285f3773ff7c76dcb0",
+  "https://deno.land/x/mock@v0.9.4/deps/udibo/mixins/apply.ts": "6c41afdedd37938eedef823b45d18917d2385a2fe02af3ec72a738b5a6dbf3f8",
+  "https://deno.land/x/mock@v0.9.4/spy.ts": "c6c66b124f1c0b86f479e66e1daf687ef03aff068ec776ff61a3bf25ff3da5d0",
+  "https://deno.land/x/mock@v0.9.4/stub.ts": "762cb86de92038e17dfd1af25429036fa7aadecbafdb39fa98edfa01e20951eb"
+}
