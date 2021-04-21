@@ -1,7 +1,7 @@
 # genetic 🧬
 
-A Typescript Genetic Algorithm Framework based on
-[Sean Moriarity's](https://github.com/seanmor5)
+[`genetic`](https://github.com/bermi/genetic) is a Typescript Genetic Algorithm
+Framework based on [Sean Moriarity's](https://github.com/seanmor5)
 [Genetic Algorithms in Elixir](https://pragprog.com/titles/smgaelixir/genetic-algorithms-in-elixir/)
 book.
 
@@ -9,15 +9,20 @@ For details on how genetic algorithms work and their shortcomings, check
 [A review on genetic algorithm: past, present, and
 future](https://link.springer.com/article/10.1007/s11042-020-10139-6)
 
-This library is asynchronous and its goal is to allow implementing streaming
-populations and dynamic fitness functions for continuous evaluation.
+This library is asynchronous, and its goal is to allow the implementation of
+streaming populations and dynamic fitness functions for continuous evaluation.
+
+Keep in mind that genetic algorithms will underperform
+[carefully designed algorithms](https://www.algorist.com/algorist.html) under
+most circumstances. They can be helpful for sporadic exploration when the
+problem is poorly understood or of stochastic nature.
 
 ## Development
 
-This project has been built using [deno 🦕](https://deno.land/).
+`genetic` has been developed using [deno 🦕](https://deno.land/).
 
-The `Makefile` includes shortcuts to commands that will help you test the
-project and run the examples.
+The `Makefile` includes shortcuts to commands that will help testing the project
+and run the examples.
 
 ## Documentation
 
@@ -45,8 +50,7 @@ const oneMaxProblem: Genetic.Problem<number> = {
       resolve(chromosome.genes.reduce((total, n) => n + total, 0))
     );
   },
-  shouldTerminate: ([best], _generation, _temperature) =>
-    best.fitness === maxFitness,
+  shouldTerminate: ([best], _generation, _temperature) => best.fitness === 1000,
 };
 ```
 
@@ -88,7 +92,7 @@ make run-examples
 
 ## Tests
 
-To run tests call
+To run the tests, call
 
 ```shell
 make test
