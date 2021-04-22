@@ -17,14 +17,75 @@ Keep in mind that genetic algorithms will underperform
 most circumstances. They can be helpful for sporadic exploration when the
 problem is poorly understood or of stochastic nature.
 
-## Development
-
-`genetic` has been developed using [deno 🦕](https://deno.land/).
-
-The `Makefile` includes shortcuts to commands that will help testing the project
-and run the examples.
-
 ## Documentation
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1JhbmRvbSBQb3B1bGF0aW9uXSAtLT4gQihTZWxlY3QgRml0dGVzdClcbiAgICBCIC0tPiBDKENyb3Nzb3ZlcilcbiAgICBDIC0tPiBEKE11dGF0ZSlcbiAgICBEIC0tPiBFRShSZWluc2VydGlvbilcbiAgICBFRSAtLT4gRShFdm9sdmUpXG4gICAgRSAtLT4gRntUZXJtaW5hdGU_fVxuICAgIEYgLS0-IEdbeWVzXVxuICAgIEYgLS0-IEhbTm9dXG4gICAgSCAtLT4gQlxuICAgIEcgLS0-IEkoQmVzdCByZXN1bHQpIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRhcmsifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1JhbmRvbSBQb3B1bGF0aW9uXSAtLT4gQihTZWxlY3QgRml0dGVzdClcbiAgICBCIC0tPiBDKENyb3Nzb3ZlcilcbiAgICBDIC0tPiBEKE11dGF0ZSlcbiAgICBEIC0tPiBFRShSZWluc2VydGlvbilcbiAgICBFRSAtLT4gRShFdm9sdmUpXG4gICAgRSAtLT4gRntUZXJtaW5hdGU_fVxuICAgIEYgLS0-IEdbeWVzXVxuICAgIEYgLS0-IEhbTm9dXG4gICAgSCAtLT4gQlxuICAgIEcgLS0-IEkoQmVzdCByZXN1bHQpIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRhcmsifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
+
+
+### Initialization options
+
+* `populationSize`:  Initial population size. Defaults to `100`
+
+### Selection
+
+* `selectionRate`: Rate for selecting fittest parents that will procreate in the crossover process. Default: `0.8`
+* `selectionType`: One of the following selection strategies:
+  * (default) `elite`: Only the best individuals from the last generation will be carried over (without any changes) to the next one.
+  * `random`
+  * `tournament`: Randomly divides the population in 3 groups and the winners of each group are carried over.
+  * `roulette`: [Fitness proportionate selection](https://en.wikipedia.org/wiki/Fitness_proportionate_selection)
+  * `stochasticUniversalSampling`
+  * `boltzmannSelection`: Temperature controls the rate of selection avoiding premature convergence.
+  * `rank`: Selection probabilities based on their rank position. `n + 1/fitnessSum`.
+
+### Crossover
+
+* `crossoverRepairFn`: Optional function for repairing damaged chromosomes.
+* `crossoverType`: One of the following crossover strategies:
+  * (default) `singlePoint`
+  * `orderOne`
+  * `uniform`
+    * `crossoverRate`
+  * `wholeArithmetic`
+    * `crossoverAlpha`
+  * `partiallyMatched`
+
+### Mutation
+
+* `mutationRate`: Rate of chromosomes that will be mutated. Default: `0.05`
+* `mutationFn`: Custom mutation function.
+* `mutationType`: One of the following mutation strategies:
+  * (default) `shuffle`
+  * `flipAll`
+  * `flipSome`
+    * `genMutationRate`: 0.5
+  * `scramble`
+  * `scrambleSlice`
+    * `scrambleSize`: Default `chromosome.size/2`
+  * `gaussian`
+    * `genMutationRate`: Default 1
+
+### Reinsertion
+
+* `reinsertionFn`: Custom reinsertion function.
+* `reinsertionType`: One of the following reinsertion strategies:
+  * `pure`: Default
+  * elitist
+    * `survivalRate`: Number of survivors to keep on the population. Default: `0.2`
+    * `survivorCount`: Absolute number of survivors to keep. Overrides `survivalRate`
+
+### Simulated annealing
+
+* `coolingRate`: Rate at which the temperature will change relative to fitness changes. Defaults to `0.85`
+
+### Evolution options
+
+* `fitnessSortDirection`: Default: `"DESC"`
+* `maxPopulation`: Limit how large the population can become after reinsertion. Default `Infinity`
+* `maxPopulationFn`: Dynamically limit the population size.
+
+
+### Usage
 
 Import the main `genetic` async function and type definitions under `Genetic` .
 
@@ -32,7 +93,7 @@ Import the main `genetic` async function and type definitions under `Genetic` .
 import genetic, { Genetic } from "https://deno.land/x/genetic@v1.0.4/mod.ts";
 ```
 
-State your problem. In this case we'll solve the one max problem (the hello
+State your problem by implementing the [`Problem interface`](https://github.com/bermi/genetic/blob/92649a8b9724b780e74ebfc34d9229f95a1402c2/types.ts#L180). In this case we'll solve the one max problem (the hello
 world of genetic algoritms). Our goal is to maximize the number of ones on a
 bitstring.
 
@@ -89,6 +150,14 @@ To run all the examples, call:
 ```shell
 make run-examples
 ```
+
+## Development
+
+`genetic` has been developed using [deno 🦕](https://deno.land/).
+
+The `Makefile` includes shortcuts to commands that will help testing the project
+and run the examples.
+
 
 ## Tests
 
