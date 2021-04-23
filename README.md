@@ -98,7 +98,7 @@ problem is poorly understood or of stochastic nature.
 Import the main `genetic` async function and type definitions under `Genetic` .
 
 ```typescript
-import genetic, { Genetic } from "https://deno.land/x/genetic@v1.0.4/mod.ts";
+import genetic, { Genetic } from "https://deno.land/x/genetic@v1.0.5/mod.ts";
 ```
 
 State your problem by implementing the
