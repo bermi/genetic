@@ -49,6 +49,7 @@ run-examples: $(EXAMPLES)
 		echo "Running $${example}"; \
 		deno run --unstable $${example} ; \
 	done
+	deno run --unstable --allow-read examples/tsp_webworkers/runner.ts
 
 publish:
 	land publish
