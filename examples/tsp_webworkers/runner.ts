@@ -27,7 +27,7 @@ const cities = [
   { "x": 65, "y": 114 },
 ];
 
-const workerStatus: Record<string,string> = {};
+const workerStatus: Record<string, string> = {};
 const logStatus = () => {
   Deno.stdout.write(
     new TextEncoder().encode(
@@ -71,9 +71,11 @@ const concurrentSolver = (id: number) =>
     });
   });
 
-console.log(`Solving Traveling Salesman Problem between ${cities.length} cities using ${totalWorkers} workers`)
+console.log(
+  `Solving Traveling Salesman Problem between ${cities.length} cities using ${totalWorkers} workers`,
+);
 
-const results: any[] = await Promise.all(
+const results: number[] = await Promise.all(
   Array.from({ length: totalWorkers }).map((_, i) => concurrentSolver(i + 1)),
 );
 

@@ -1,14 +1,14 @@
 build: export DENO_DIR = ./deno_dir
 build: lock.json test deno_dir/dist/binaries/genetic deno_dir/dist/bundles/genetic.js
 
-deno_dir/dist/binaries/%: src/%.ts
+deno_dir/dist/binaries/%: mod.ts
 	mkdir -p deno_dir/dist/binaries
-	deno compile --unstable --lite src/$*.ts
+	deno compile --unstable --lite mod.ts
 	mv $* $@
 
-deno_dir/dist/bundles/%.js: src/%.ts
+deno_dir/dist/bundles/%.js: mod.ts
 	mkdir -p deno_dir/dist/bundles
-	deno bundle src/$*.ts > $@
+	deno bundle mod.ts > $@
 
 lock.json: export DENO_DIR = ./deno_dir
 lock.json: src/deps.ts
