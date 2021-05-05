@@ -23,7 +23,7 @@ format:
 	deno fmt
 
 lint:
-	deno lint --unstable
+	deno lint --unstable --ignore=deno_dir
 
 info/%:
 	deno info $@
