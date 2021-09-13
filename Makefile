@@ -3,7 +3,7 @@ build: lock.json test deno_dir/dist/binaries/genetic deno_dir/dist/bundles/genet
 
 deno_dir/dist/binaries/%: mod.ts
 	mkdir -p deno_dir/dist/binaries
-	deno compile --unstable --lite mod.ts
+	deno compile --unstable mod.ts
 	mv $* $@
 
 deno_dir/dist/bundles/%.js: mod.ts
