@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "location": "/std@0.106.0/testing/asserts.ts",
+    "alt-svc": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400",
+    "content-length": "0",
+    "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "x-deno-warning": "Implicitly using latest version (0.106.0) for https://deno.land/std/testing/asserts.ts",
+    "cf-ray": "68e5494a5d326641-MAD",
+    "date": "Mon, 13 Sep 2021 23:51:55 GMT",
+    "server": "cloudflare"
+  },
+  "url": "https://deno.land/std/testing/asserts.ts"
+}

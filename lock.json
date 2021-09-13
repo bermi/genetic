@@ -1,9 +1,20 @@
 {
-  "https://deno.land/std@0.92.0/fmt/colors.ts": "db22b314a2ae9430ae7460ce005e0a7130e23ae1c999157e3bb77cf55800f7e4",
-  "https://deno.land/std@0.92.0/testing/_diff.ts": "961eaf6d9f5b0a8556c9d835bbc6fa74f5addd7d3b02728ba7936ff93364f7a3",
-  "https://deno.land/std@0.92.0/testing/asserts.ts": "83889f9a37bdab16cb68b023a15f9172ceb644f62c0e727c72d4870a666e53d6",
-  "https://deno.land/x/mixins@v0.7.1/apply.ts": "dad7095324f5ce23693a0bc0eb3238f230c0ed2160ea8c285f3773ff7c76dcb0",
-  "https://deno.land/x/mock@v0.9.4/deps/udibo/mixins/apply.ts": "6c41afdedd37938eedef823b45d18917d2385a2fe02af3ec72a738b5a6dbf3f8",
-  "https://deno.land/x/mock@v0.9.4/spy.ts": "c6c66b124f1c0b86f479e66e1daf687ef03aff068ec776ff61a3bf25ff3da5d0",
-  "https://deno.land/x/mock@v0.9.4/stub.ts": "762cb86de92038e17dfd1af25429036fa7aadecbafdb39fa98edfa01e20951eb"
+  "https://deno.land/std@0.106.0/fmt/colors.ts": "d2f8355f00a74404668fc5a1e4a92983ce1a9b0a6ac1d40efbd681cb8f519586",
+  "https://deno.land/std@0.106.0/testing/_diff.ts": "5d3693155f561d1a5443ac751ac70aab9f5d67b4819a621d4b96b8a1a1c89620",
+  "https://deno.land/std@0.106.0/testing/asserts.ts": "5f3a0fddb15a9733e44737e2d52be8e696bb79bc4e3830a9f246c5b8f3b29b31",
+  "https://deno.land/std@0.98.0/async/delay.ts": "9de1d8d07d1927767ab7f82434b883f3d8294fb19cad819691a2ad81a728cf3d",
+  "https://deno.land/std@0.98.0/fmt/colors.ts": "db22b314a2ae9430ae7460ce005e0a7130e23ae1c999157e3bb77cf55800f7e4",
+  "https://deno.land/std@0.98.0/testing/_diff.ts": "961eaf6d9f5b0a8556c9d835bbc6fa74f5addd7d3b02728ba7936ff93364f7a3",
+  "https://deno.land/std@0.98.0/testing/asserts.ts": "289b6ccf3b422ffb311cbf56996960d6530f8d8c0a7281803764c5ec672f9f9c",
+  "https://deno.land/x/collections@v0.11.1/common.ts": "34e8367e3696c3f872ae417d7c421fa908a5a2125a1c4cb259f7dee9561a7096",
+  "https://deno.land/x/collections@v0.11.1/comparators.ts": "08563340dbb0051f032bacdcf854bcabd13d607d2e8cb1889826417419df89d0",
+  "https://deno.land/x/collections@v0.11.1/trees/bs_node.ts": "854d39f6d60cdcb47e1183f0fa67091e6bad59dd2b13252a8b38b1b37269fa67",
+  "https://deno.land/x/collections@v0.11.1/trees/bs_tree.ts": "694605e10a9f56caf8468c5eea06d60a8d81521dee75d4524a5f790b1ee713b5",
+  "https://deno.land/x/collections@v0.11.1/trees/rb_node.ts": "e5eecc211933140e0535fc371a4990bd5ac889b00136c96a4a610dbbf78d9ecb",
+  "https://deno.land/x/collections@v0.11.1/trees/rb_tree.ts": "e1e5f4e26bc255ebf41d72b498a2af903af69f0391276a4a0eac6d46fc43f942",
+  "https://deno.land/x/collections@v0.11.1/vector.ts": "23cb91087cc89ce9a1e10954336484b537a44bd786e21babc310ae85cb7ad52d",
+  "https://deno.land/x/mixins@v0.7.3/apply.ts": "dad7095324f5ce23693a0bc0eb3238f230c0ed2160ea8c285f3773ff7c76dcb0",
+  "https://deno.land/x/mock@v0.10.0/deps.ts": "0d21141c4085f32784a83d5c26a047b470ed04e522fc1c19459ca73cfef41aa4",
+  "https://deno.land/x/mock@v0.10.0/spy.ts": "5a92bf09f9fcddb0aff2af25e539cd062d7cd608a9f1bb6606298255b45dcc3b",
+  "https://deno.land/x/mock@v0.10.0/stub.ts": "762cb86de92038e17dfd1af25429036fa7aadecbafdb39fa98edfa01e20951eb"
 }

@@ -1,4 +1,5 @@
-build: export DENO_DIR = ./deno_dir
+export DENO_DIR = ./deno_dir
+
 build: lock.json test deno_dir/dist/binaries/genetic deno_dir/dist/bundles/genetic.js
 
 deno_dir/dist/binaries/%: mod.ts
@@ -10,14 +11,11 @@ deno_dir/dist/bundles/%.js: mod.ts
 	mkdir -p deno_dir/dist/bundles
 	deno bundle mod.ts > $@
 
-lock.json: export DENO_DIR = ./deno_dir
 lock.json: src/deps.ts
+	rm -rf deno_dir/deps
 	deno cache --lock=$@ --lock-write $<
 	deno cache src/deps.ts
 	git add deno_dir/deps/*
-
-dev:
-	deno run --watch  --lock=lock.json --cached-only --unstable $@
 
 format:
 	deno fmt
