@@ -48,7 +48,7 @@ console.log({
   ),
 });
 
-function encryptDecrypt(word: BigInt[], key: BigInt) {
+function encryptDecrypt(word: bigint[], key: bigint) {
   return word.map((c) =>
     String.fromCharCode(Number((BigInt(c) ^ BigInt(key)) % 32768n))
   ).join(
