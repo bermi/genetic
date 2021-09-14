@@ -1,5 +1,12 @@
 import Canvas from "https://raw.githubusercontent.com/littledivy/drawille/main/canvas.ts";
 
+import { Genetic } from "../../mod.ts";
+
+interface WorkerResponse {
+  workerId: number;
+  result: Genetic.Chromosome<number>;
+}
+
 const totalWorkers = 8;
 
 const canvasWidth = 400;
@@ -43,7 +50,7 @@ const logStatus = () => {
   );
 };
 
-const concurrentSolver = (id: number) =>
+const concurrentSolver = (id: number): Promise<WorkerResponse> =>
   new Promise((resolve, reject) => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url).href, {
       type: "module",
@@ -54,11 +61,11 @@ const concurrentSolver = (id: number) =>
 
     worker.onmessage = (event) => {
       const { type, id, data } = event.data;
-
+      logStatus();
       if (type === "status") {
         workerStatus[id] = data;
-        logStatus();
       } else if (type === "result") {
+        worker.terminate();
         resolve({ workerId: id, result: data });
       }
     };
@@ -75,18 +82,16 @@ console.log(
   `Solving Traveling Salesman Problem between ${cities.length} cities using ${totalWorkers} workers`,
 );
 
-const results: number[] = await Promise.all(
+const results: WorkerResponse[] = await Promise.all(
   Array.from({ length: totalWorkers }).map((_, i) => concurrentSolver(i + 1)),
 );
-
-console.log(results);
 
 const bestPopulation = results.reduce((best, { result }) => {
   if (best.fitness > result.fitness) {
     return result;
   }
   return best;
-}, { fitness: 99999999999 });
+}, results[0]?.result);
 
 console.log({ bestPopulation });
 

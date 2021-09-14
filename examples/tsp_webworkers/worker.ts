@@ -47,7 +47,18 @@ const getTspProblem = (cities: City[]): Genetic.Problem<number> => ({
     (generation >= 100 && temperature <= 0) || generation > 300,
 });
 
-self.onmessage = async (e) => {
+interface WebWorkerEvent {
+  id: number;
+  type: string;
+  data: {
+    cities: City[];
+  };
+}
+interface WebWorkerResponse {
+  data: WebWorkerEvent;
+}
+
+self.onmessage = async (e: WebWorkerResponse) => {
   const { id, type, data } = e.data;
   if (type === "solve") {
     const result = await genetic(
@@ -74,7 +85,5 @@ self.onmessage = async (e) => {
       id,
       data: result,
     });
-
-    self.close();
   }
 };

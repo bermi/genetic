@@ -18,7 +18,7 @@ lock.json: src/deps.ts
 	git add deno_dir/deps/*
 
 format:
-	deno fmt
+	deno fmt --ignore=deno_dir
 
 lint:
 	deno lint --unstable --ignore=deno_dir
