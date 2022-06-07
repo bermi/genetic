@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "access-control-allow-origin": "*",
+    "server": "deno/europe-southwest1-a",
+    "vary": "Accept-Encoding",
+    "x-deno-warning": "Implicitly using latest version (0.15.2) for https://deno.land/x/mock/mod.ts",
+    "location": "/x/mock@0.15.2/mod.ts",
+    "date": "Tue, 07 Jun 2022 11:06:44 GMT"
+  },
+  "url": "https://deno.land/x/mock/mod.ts",
+  "now": {
+    "secs_since_epoch": 1654600004,
+    "nanos_since_epoch": 816077000
+  }
+}

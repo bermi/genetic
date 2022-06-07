@@ -1,0 +1,21 @@
+{
+  "headers": {
+    "last-modified": "Thu, 14 Apr 2022 18:02:14 GMT",
+    "etag": "\"b9e9021a3873d1f40fe6ad124337f366\"",
+    "x-amz-id-2": "lAvS5mPxPtkiNBDhD4KXQE+XdXmbruN/Fvbasby2uMAsH13qRlPMCsYL+UiPWis6MVQCVzezPYY=",
+    "date": "Tue, 07 Jun 2022 11:06:46 GMT",
+    "x-amz-request-id": "CJPXE7R3BA0Q3RJQ",
+    "x-amz-version-id": "WNHh8FxGxD5nN1EhI8QweCo.b8JdnXHa",
+    "content-length": "412",
+    "cache-control": "public, max-age=31536000, immutable",
+    "server": "deno/europe-southwest1-a",
+    "access-control-allow-origin": "*",
+    "vary": "Accept-Encoding",
+    "content-type": "application/typescript; charset=utf-8"
+  },
+  "url": "https://deno.land/std@0.135.0/collections/_comparators.ts",
+  "now": {
+    "secs_since_epoch": 1654600005,
+    "nanos_since_epoch": 580776000
+  }
+}

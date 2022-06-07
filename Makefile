@@ -29,11 +29,8 @@ info/%:
 doc/%:
 	deno doc $@
 
-run: lint
-	deno run  --lock=lock.json --cached-only $@ src/genetic.ts
-
 repl:
-	deno repl
+	deno repl --lock=lock.json --unstable  --allow-none
 
 clean:
 	rm -rf deno_dir/gen deno_dir/dl deno_dir/dist coverage

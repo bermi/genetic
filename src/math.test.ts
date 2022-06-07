@@ -16,15 +16,13 @@ Deno.test("math: randomGaussian", () => {
 });
 
 Deno.test("math: universalNumberGenerator", () => {
-  const random: Stub<Math> = stub(Math, "random");
-  random.returns = [0.12345];
+  const random: Stub<Math> = stub(Math, "random", () => 0.12345);
   assertEquals(universalNumberGenerator(), 0.12345);
   random.restore();
 });
 
 Deno.test("math: randomNumber", () => {
-  const random: Stub<Math> = stub(Math, "random");
-  random.returns = [0.5123];
+  const random: Stub<Math> = stub(Math, "random", () => 0.5123);
   assertEquals(randomNumber(10), 5);
   random.restore();
 });
