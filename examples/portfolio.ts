@@ -13,7 +13,7 @@ const portfolioProblem: Genetic.Problem<PortfolioInstrument> = {
       resolve(
         Array.from(
           { length: 10 },
-          () => ([getRandomNumber(0, 10), getRandomNumber(0, 10)]),
+          () => [getRandomNumber(0, 10), getRandomNumber(0, 10)],
         ),
       )
     );

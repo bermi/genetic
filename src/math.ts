@@ -12,7 +12,7 @@ export const randomNumber: RandomNumberGenerator = (max) =>
   Math.floor(Math.random() * (max + 1));
 
 /**
-* Returns a random number distributed according to the normal distribution with
+ * Returns a random number distributed according to the normal distribution with
  * the provided mean and sigma/standardDeviation
  */
 export const randomGaussian: GausianNumberGenerator = (
