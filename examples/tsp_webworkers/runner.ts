@@ -54,9 +54,6 @@ const concurrentSolver = (id: number): Promise<WorkerResponse> =>
   new Promise((resolve, reject) => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url).href, {
       type: "module",
-      deno: {
-        namespace: true,
-      },
     });
 
     worker.onmessage = (event) => {
