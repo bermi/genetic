@@ -13,5 +13,5 @@ jobs:
           deno-version: v1.x
       - run: |
           deno --version
-          deno fmt --ignore=deno_dir --check
-          deno test --lock=lock.json --allow-none --unstable
+          deno fmt --config=deno.json --check
+          deno test --lock=lock.json --allow-none --unstable --ignore=npm

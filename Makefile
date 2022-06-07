@@ -50,7 +50,7 @@ publish:
 	land publish
 
 coverage: clean test
-	deno test --coverage=coverage --unstable
+	deno test --coverage=coverage --unstable --ignore=npm
 	deno coverage --lcov --unstable coverage/ > coverage/coverage.lcov
 	genhtml -o coverage/html coverage/coverage.lcov
 	open coverage/html/index.html

@@ -1,0 +1,24 @@
+name: npm build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+      - name: Install dependencies
+        run: |
+        RUN apt-get update && \
+        apt-get install -y git curl unzip build-essential && \
+        curl -fsSL https://deno.land/x/install/install.sh | sh && \
+        curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+        apt-get install -y nodejs && \
+        apt-get clean -y
+      - name: Build npm release
+        run: |
+        deno run -A build_npm.ts "$(deno eval 'import { VERSION } from "./version.ts"; console.log(VERSION);')"
