@@ -7,3 +7,4 @@ deno_dir/lint_incremental_cache_v1
 .vscode/configurationCache.log
 .vscode/dryrun.log
 .vscode/targets.log
+deno_dir/fmt_incremental_cache_v1-shm
