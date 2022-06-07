@@ -18,10 +18,10 @@ lock.json: src/deps.ts
 	git add deno_dir/deps/*
 
 format:
-	deno fmt --ignore=deno_dir
+	deno fmt --config=deno.json
 
 lint:
-	deno lint --unstable --ignore=deno_dir
+	deno lint --unstable --config=deno.json
 
 info/%:
 	deno info $@
@@ -36,7 +36,7 @@ clean:
 	rm -rf deno_dir/gen deno_dir/dl deno_dir/dist coverage
 
 test: format lint
-	deno test --lock=lock.json --cached-only --allow-none --unstable
+	deno test --lock=lock.json --cached-only --allow-none --unstable --ignore=npm
 
 EXAMPLES=$(wildcard examples/*.ts)
 run-examples: $(EXAMPLES)

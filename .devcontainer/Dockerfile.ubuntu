@@ -2,8 +2,10 @@ FROM ubuntu:22.04
 
 RUN apt-get update && \
   apt-get install -y git curl unzip build-essential && \
-  apt-get clean -y && \
-  curl -fsSL https://deno.land/x/install/install.sh | sh
+  curl -fsSL https://deno.land/x/install/install.sh | sh && \
+  curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+  apt-get install -y nodejs && \
+  apt-get clean -y
 
 ENV DENO_INSTALL="/root/.deno"
 ENV PATH="$DENO_INSTALL/bin:$PATH"

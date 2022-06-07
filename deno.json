@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "lint": {
+    "files": {
+      "exclude": ["npm/", "deno_dir/"]
+    }
+  },
+  "fmt": {
+    "files": {
+      "exclude": ["npm/", "deno_dir/"]
+    }
+  }
+}

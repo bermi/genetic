@@ -8,3 +8,4 @@ deno_dir/fmt_incremental_cache_v1
 deno_dir/fmt_incremental_cache_v1-shm
 deno_dir/gen
 deno_dir/lint_incremental_cache_v1
+npm
