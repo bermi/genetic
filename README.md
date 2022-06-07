@@ -169,6 +169,8 @@ and run the examples.
 
 ## Tests
 
+![tests](https://github.com/bermi/genetic/actions/workflows/deno.yml/badge.svg)
+
 To run the tests, call
 
 ```shell
@@ -179,7 +181,7 @@ make test
 
 MIT License
 
-Copyright (c) 2021 Bermi Ferrer
+Copyright (c) 2022 Bermi Ferrer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

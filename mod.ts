@@ -1,5 +1,5 @@
 // MIT License
-// Copyright (c) 2021 Bermi Ferrer
+// Copyright (c) 2022 Bermi Ferrer
 
 export { VERSION } from "./version.ts";
 export { defaultOptions } from "./src/run.ts";
