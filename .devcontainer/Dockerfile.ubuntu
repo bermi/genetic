@@ -1,0 +1,12 @@
+FROM ubuntu:22.04
+
+RUN apt-get update && \
+  apt-get install -y git curl unzip build-essential && \
+  apt-get clean -y && \
+  curl -fsSL https://deno.land/x/install/install.sh | sh
+
+ENV DENO_INSTALL="/root/.deno"
+ENV PATH="$DENO_INSTALL/bin:$PATH"
+
+WORKDIR /workdir
+
